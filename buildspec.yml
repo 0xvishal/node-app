@@ -14,7 +14,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t 701958254764.dkr.ecr.ap-south-1.amazonaws.com/node-app:latest
+      - docker build -t 701958254764.dkr.ecr.ap-south-1.amazonaws.com/node-app .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
