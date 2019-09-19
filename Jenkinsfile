@@ -20,10 +20,10 @@ node{
     }
     
 	stage('Dev Deploy'){
-		def dockerRun = "docker run -d -p 8080:8080 --name node-app ${dockerImage}"
+		def dockerRun = "docker run -d -p 8080:8080 --name nodeapp ${dockerImage}"
 		sshagent(['dev-docker']) {
 		    try{
-				sh "ssh -o StrictHostKeyChecking=no ec2-user@13.127.166.0 docker rm -f node-app "
+				sh "ssh -o StrictHostKeyChecking=no ec2-user@13.127.166.0 docker rm -f nodeapp "
 			}catch(e){
 			
 			
